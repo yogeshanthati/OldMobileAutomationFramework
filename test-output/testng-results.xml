@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-03T10:56:14 IST" name="Suite" finished-at="2021-08-03T10:56:14 IST" duration-ms="203">
+  <suite name="Suite" duration-ms="22499" started-at="2021-08-03T14:25:31 IST" finished-at="2021-08-03T14:25:54 IST">
     <groups>
     </groups>
-    <test started-at="2021-08-03T10:56:14 IST" name="IphoneXS" finished-at="2021-08-03T10:56:14 IST" duration-ms="203">
+    <test name="IphoneXS" duration-ms="22499" started-at="2021-08-03T14:25:31 IST" finished-at="2021-08-03T14:25:54 IST">
       <class name="testcases.TestCases">
-        <test-method is-config="true" signature="testStart(java.lang.reflect.Method)[pri:0, instance:testcases.TestCases@2dca0d64]" started-at="2021-08-03T10:56:14 IST" name="testStart" finished-at="2021-08-03T10:56:14 IST" duration-ms="25" status="PASS">
+        <test-method status="PASS" signature="testStart(java.lang.reflect.Method)[pri:0, instance:testcases.TestCases@729d991e]" name="testStart" is-config="true" duration-ms="23" started-at="2021-08-03T14:25:31 IST" finished-at="2021-08-03T14:25:31 IST">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testStart -->
-        <test-method signature="MOB_TC001_LogIntoTreatApp(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.TestCases@2dca0d64]" started-at="2021-08-03T10:56:14 IST" name="MOB_TC001_LogIntoTreatApp" finished-at="2021-08-03T10:56:14 IST" duration-ms="6" status="PASS">
+        <test-method status="PASS" signature="MOB_TC001_LogIntoTreatApp(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.TestCases@729d991e]" name="MOB_TC001_LogIntoTreatApp" duration-ms="22312" started-at="2021-08-03T14:25:31 IST" finished-at="2021-08-03T14:25:54 IST">
           <params>
             <param index="0">
               <value>

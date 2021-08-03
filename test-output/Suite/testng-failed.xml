@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]">
+  <test thread-count="5" parallel="tests" name="IphoneXS(failed)">
+    <parameter name="selenium.deviceName" value="IphoneXS"/>
+    <parameter name="selenium.PlatformVersion" value="XS"/>
+    <parameter name="selenium.PlatformName" value="iPhone"/>
+    <classes>
+      <class name="testcases.TestCases">
+        <methods>
+          <include name="MOB_TC001_LogIntoTreatApp" invocation-numbers="0"/>
+          <include name="testStart"/>
+        </methods>
+      </class> <!-- testcases.TestCases -->
+    </classes>
+  </test> <!-- IphoneXS(failed) -->
+</suite> <!-- Failed suite [Suite] -->

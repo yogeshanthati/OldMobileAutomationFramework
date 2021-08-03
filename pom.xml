@@ -6,19 +6,19 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>ThriventFramework</name>
+	<name>TreatApplicationFramework</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
-		<selenium.version>3.14.0</selenium.version>
+		<selenium.version>3.141.59</selenium.version>
 		<extentreports.version>5.0.6</extentreports.version>
 		<mail.version>1.6.2</mail.version>
 		<log4j.version>1.2.17</log4j.version>
 		<jxl.version>2.6.12</jxl.version>
 		<testng.version>7.4.0</testng.version>
-		<java-client.version>6.1.0</java-client.version>
+		<java-client.version>7.5.1</java-client.version>
 		<selenium-shutterbug.version>0.9</selenium-shutterbug.version>
 		<commons-configuration.version>1.10</commons-configuration.version>
 		<apachepoi.version>5.0.0</apachepoi.version>

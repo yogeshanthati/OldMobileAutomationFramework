@@ -23,42 +23,106 @@ public class TreatHomePage extends AppPage {
 
 
 	private Page page;
-	@AndroidFindBy(xpath="//*[@text='User ID or Email']")
+	
+//	
+	
+	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/login_button")
+	@iOSXCUITFindBy(xpath = "//*[@name='SIGN IN']")
+	private MobileElement btnSignInSplashScreen;
+	
+	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/edit_email")
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[contains(@value,'User ID or Email')]")
-	private MobileElement txtUserID;
+	private MobileElement txtEmailAddress;
 
-	@AndroidFindBy(id="com.ddthrivent.devqa:id/et_password")
+	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/edit_password")
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[contains(@value,'Password')]")
 	private MobileElement txtPassword;
 
-	@AndroidFindBy(xpath="//*[@text='SIGN IN']")
+	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/btn_login")
 	@iOSXCUITFindBy(xpath = "//*[@name='SIGN IN']")
 	private MobileElement btnSignIn;
 
+	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/myAccountFragment")
+	@iOSXCUITFindBy(xpath = "*****")
+	private MobileElement btnMyAccount;
+	
+	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/tv_sign_out")
+	@iOSXCUITFindBy(xpath = "*****")
+	private MobileElement btnSignOut;
 
 
 
 	public void SignInToApp() {
 
 		try {
-			//			passed( "**********************************************"+ data.get("UserName")+""+ data.get("Password")+"***********************************");
-
-			waitForElement(txtUserID);
-			enterText(txtUserID, "User ID",  data.get("UserName"));
-			hidekeyboard();
+			waitForElement(btnSignInSplashScreen);
+			clickOn(btnSignInSplashScreen, "Sign In Button");
+			takeScreenshot(driver);
+			enterText(txtEmailAddress, "EmailAddress",  data.get("UserName"));
+			//hidekeyboard();
 			enterText(txtPassword, "Password",  data.get("Password"));
-			hidekeyboard();
+			//hidekeyboard();
 			takeScreenshot(driver);
 			clickOn(btnSignIn, "Sign In Button");
+			
+			waitForElement(btnMyAccount);
+			
+			if(isElementPresent(btnMyAccount)) {
+				
+				passed("Successfully Navigated To Discover Page");
+				
+				takeScreenshot(driver);
+				SingOutApp();
+			}
+			else {
+				failed(driver,"Failed to Navigate To Discover Page");
+			}
 		} catch (Exception e) {
 			failed(driver,"Exception caught while logging in " + e.getMessage());
 		}
+		
+	
 
 	}
 
 	
 	public void SingOutApp() {
 		
+		waitForElement(btnMyAccount);
+		
+		if(isElementPresent(btnMyAccount)) {
+			
+			clickOn(btnMyAccount, "My Account button");
+			
+			takeScreenshot(driver);
+			
+			
+			
+			waitForElement(btnSignOut);
+			
+			if(isElementPresent(btnSignOut)) {
+			
+				clickOn(btnSignOut, "Sign out button");
+				
+				takeScreenshot(driver);
+				
+				if(isElementPresent(btnSignInSplashScreen)) {
+					
+					passed("User Successfully Logged out From the account");
+				}
+				else {
+					failed(driver,"User Failed to Log out from the account");
+				}
+			}
+			else {
+				
+			}
+			
+			
+		}
+		else {
+			
+		}
 		
 	}
 }
