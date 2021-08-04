@@ -27,7 +27,9 @@
 		<jsonsimple.version>1.1.1</jsonsimple.version>
 		<jsonio.version>4.10.1</jsonio.version>
 		<jerseyclient.version>1.19.4</jerseyclient.version>
-		<freetts.version>1.2.2</freetts.version>		
+		<freetts.version>1.2.2</freetts.version>	
+		<aspectj.version>1.9.2</aspectj.version>	
+		
 	</properties>
 
 	<dependencies>
@@ -127,24 +129,21 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19</version>
-				<executions>
-					<execution>
-						<id>default-test</id>
-					</execution>
-				</executions>
+				<configuration>
+					<includes>
+						<include>**/*Launch*.java</include>
+					</includes>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<fork>true</fork>
-					<executable>${JAVA_HOME}/bin/javac</executable>
-					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -152,5 +151,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

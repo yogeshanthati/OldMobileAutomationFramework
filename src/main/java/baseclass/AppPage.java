@@ -34,38 +34,7 @@ public class AppPage extends pagemethods.Page {
 		super(driver,data);
 	}
 
-public boolean isAccounNumberValid(String AccountNumberString) {
-        
-        String AccNum = AccountNumberString;
 
-        String AccNumArr[]=AccNum.split(",");
-
-        String strAccNum=AccNumArr[0];
-        int digitcount = 0;
-        int charCount=0;
-        for (int i = 0, len = strAccNum.length(); i < len; i++) {
-            if (Character.isDigit(strAccNum.charAt(i))) {
-                digitcount++;
-                
-            }
-            else{
-                
-            charCount++;
-            }
-               
-        }                
-    if(digitcount==4 &&(charCount-2)==12) {
-        
-        return true;
-    }
-    else {
-        return false;
-    }
-            
-        
-        
-        
-    }
 	public Float getFloatRoundOFF(Float value) {
 
 		try {

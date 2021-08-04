@@ -16,30 +16,26 @@ import utilities.Util;
 
 public class TreatHomePage extends AppPage {
 	private static final String WebElement = null;
-
 	protected TreatHomePage(AppiumDriver<WebElement> driver,Data data) {
 		super(driver,data);
 	}
 
-
 	private Page page;
-	
-//	
-	
+		
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/login_button")
-	@iOSXCUITFindBy(xpath = "//*[@name='SIGN IN']")
+	@iOSXCUITFindBy(accessibility = "Sign In")
 	private MobileElement btnSignInSplashScreen;
 	
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/edit_email")
-	@iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[contains(@value,'User ID or Email')]")
+	@iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=Email Address']")
 	private MobileElement txtEmailAddress;
 
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/edit_password")
-	@iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[contains(@value,'Password')]")
+	@iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Password']")
 	private MobileElement txtPassword;
 
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/btn_login")
-	@iOSXCUITFindBy(xpath = "//*[@name='SIGN IN']")
+	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Sign In']")
 	private MobileElement btnSignIn;
 
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/myAccountFragment")
@@ -95,9 +91,7 @@ public class TreatHomePage extends AppPage {
 			clickOn(btnMyAccount, "My Account button");
 			
 			takeScreenshot(driver);
-			
-			
-			
+
 			waitForElement(btnSignOut);
 			
 			if(isElementPresent(btnSignOut)) {
@@ -115,13 +109,13 @@ public class TreatHomePage extends AppPage {
 				}
 			}
 			else {
-				
+				failed(driver,"User Failed to Locate SignOut button");
 			}
 			
 			
 		}
 		else {
-			
+			failed(driver,"User Failed to Locate from the My Account button");
 		}
 		
 	}

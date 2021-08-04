@@ -3,6 +3,8 @@ package launchscript;
 import java.util.ArrayList;
 import java.util.List;
 import org.testng.TestNG;
+import org.testng.annotations.Test;
+
 import utilities.Common;
 import utilities.Util;
 
@@ -10,8 +12,9 @@ import utilities.Util;
 public class LaunchScript extends Util {
 
 
-	public static void main(String[] args) {
-
+	//public static void main(String[] args) {
+	@Test
+public void LaunchScript() {
 		try {			
 			startup();			
 			TestNG testng = new TestNG();

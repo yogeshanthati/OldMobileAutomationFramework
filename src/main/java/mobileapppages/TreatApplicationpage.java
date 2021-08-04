@@ -41,7 +41,7 @@ public class TreatApplicationpage extends Common{
 				dc.setCapability("udid", "auto");
 				dc.setCapability("platformName", platformName);
 				dc.setCapability("platVersion", platFormVersion);
-				dc.setCapability("bundleId",  bundleId);
+				dc.setCapability("bundleId",  bundleId);  
 		        dc.setCapability("xcodeOrgId", "LJ44QB69J7");
 				dc.setCapability("xcodeSigningId", "iPhone Developer");
 				dc.setCapability("automationName", "XCUITest");
@@ -91,7 +91,7 @@ public class TreatApplicationpage extends Common{
 					capabilities.setCapability("name", "AutomationRun_"+ GlobalKeys.timeStamp);
 					//capabilities.setCapability("name", "AutomationRun_"+ GlobalKeys.timeStamp);
 		
-					capabilities.setCapability("app", "storage:filename=" + AndroidFileName);
+					capabilities.setCapability("app", "storage:filename=" + AndroidFileName); 
 	//				capabilities.setCapability("app", "storage:CFBundleVersion=391" + IPAFileName);
 		
 					driver = new AndroidDriver(
