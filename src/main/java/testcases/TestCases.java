@@ -1,5 +1,6 @@
 package testcases;
 
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -41,7 +42,6 @@ public class TestCases extends Common {
 			Applicationpage = new TreatApplicationpage(data);
 			TreatHomePage = Applicationpage.setUp(platformName,platFormVersion);
 			TreatHomePage.SignInToApp();
-
 			datasetEnd();
 		}
 	}

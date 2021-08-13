@@ -506,10 +506,15 @@ public String removeCommaBetweenDigits(String OrgStr) {
 	
 	public void SwipeByCoordinates(int scrollXStart,int scrollYStart,int scrollXEnd ,int scrollYEnd) {
 		
-		 new TouchAction((PerformsTouchActions) driver)
-         .press(PointOption.point(scrollXStart, scrollYStart))
-         .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
-         .moveTo(PointOption.point(scrollXEnd, scrollYEnd)).release().perform();
+		 try {
+			new TouchAction((PerformsTouchActions) driver)
+			 .press(PointOption.point(scrollXStart, scrollYStart))
+			 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
+			 .moveTo(PointOption.point(scrollXEnd, scrollYEnd)).release().perform();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 		
 	}
 	public String getCurrentDate() {

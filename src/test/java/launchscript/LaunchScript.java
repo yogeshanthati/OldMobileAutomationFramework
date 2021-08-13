@@ -12,8 +12,8 @@ import utilities.Util;
 public class LaunchScript extends Util {
 
 
-	//public static void main(String[] args) {
-	@Test
+	
+@Test
 public void LaunchScript() {
 		try {			
 			startup();			

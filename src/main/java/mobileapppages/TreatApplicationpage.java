@@ -34,71 +34,39 @@ public class TreatApplicationpage extends Common{
 			String Sauceurl = GlobalKeys.configData.get("Sauceurl");
 			String IPAFileName = GlobalKeys.configData.get("IPAFileName");
 			String AndroidFileName = GlobalKeys.configData.get("AndroidFileName");
-			if(strExecutionEnvironment.trim().contains("RealDevice")){
-			/*	String bundleId = "com.ddthrivent.dev";
+			
+			if(paltformName.trim().contains("iOS")){
+		
 				DesiredCapabilities dc = new DesiredCapabilities();
 				dc.setCapability("deviceName", "iphone Sun");
 				dc.setCapability("udid", "auto");
-				dc.setCapability("platformName", platformName);
-				dc.setCapability("platVersion", platFormVersion);
-				dc.setCapability("bundleId",  bundleId);  
+				dc.setCapability("platformName", "iOS");
+				dc.setCapability("platformVersion", "14.4.2");
+				dc.setCapability("bundleId",  "com.mutualmobile.treat.dev");  
 		        dc.setCapability("xcodeOrgId", "LJ44QB69J7");
 				dc.setCapability("xcodeSigningId", "iPhone Developer");
 				dc.setCapability("automationName", "XCUITest");
-				driver = new IOSDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), dc); */
+				driver = new IOSDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), dc); 
 				
-				DesiredCapabilities dc = new DesiredCapabilities();
-				dc.setCapability("deviceName", "RedmiK20pro");
-				dc.setCapability("udid", "d015a208");
-				dc.setCapability("platformName", "Android");
-				dc.setCapability("platVersion", "11");
-				dc.setCapability("noReset", "true");
-				dc.setCapability("appPackage", "com.xpresspa.treatmobile.qa");
-				dc.setCapability("appActivity", "com.xpresspa.treatmobile.ui.activities.splash.SplashActivity");
-				dc.setCapability("skipDeviceInitialization", true);
-				dc.setCapability("skipServerInstallation", true);
-				URL url = new URL("http://127.0.0.1:4723/wd/hub");
-				driver = new AndroidDriver<>(url, dc);
+				
 				
 			}else{		
-				if(platformName.trim().equalsIgnoreCase("iphone")) {
-					MutableCapabilities capabilities = new MutableCapabilities();
-					capabilities.setCapability("idleTimeout", GlobalKeys.configData.get("idleTimeOut"));
-					capabilities.setCapability("noReset", "false");
-					capabilities.setCapability("newCommandTimeout", GlobalKeys.configData.get("newCommandTimeout"));
-					capabilities.setCapability("language", "en");
-					capabilities.setCapability("platformName", "iOs");
-					capabilities.setCapability("deviceName", platformName + " " + platFormVersion);
-					capabilities.setCapability("name", "AutomationRun_"+ GlobalKeys.timeStamp);
-					//capabilities.setCapability("name", "AutomationRun_"+ GlobalKeys.timeStamp);
-		
-					capabilities.setCapability("app", "storage:filename=" + IPAFileName);
-	//				capabilities.setCapability("app", "storage:CFBundleVersion=391" + IPAFileName);
-		
-					driver = new IOSDriver(
-							new URL("https://" + username + ":" +
-									accesskey +
-									"@"+Sauceurl+"/wd/hub"),
-							capabilities);
+				if(paltformName.trim().equalsIgnoreCase("Android")) {
+					DesiredCapabilities dc = new DesiredCapabilities();
+					dc.setCapability("deviceName", "RedmiK20pro");
+					dc.setCapability("udid", "d015a208");
+					dc.setCapability("platformName", "Android");
+					dc.setCapability("platVersion", "11");
+					dc.setCapability("noReset", "true");
+					dc.setCapability("appPackage", "com.xpresspa.treatmobile.qa");
+					dc.setCapability("appActivity", "com.xpresspa.treatmobile.ui.activities.splash.SplashActivity");
+					dc.setCapability("skipDeviceInitialization", true);
+					dc.setCapability("skipServerInstallation", true);
+					URL url = new URL("http://127.0.0.1:4723/wd/hub");
+					driver = new AndroidDriver<>(url, dc);
 				}else{
-					MutableCapabilities capabilities = new MutableCapabilities();
-					capabilities.setCapability("idleTimeout", GlobalKeys.configData.get("idleTimeOut"));
-					capabilities.setCapability("noReset", "false");
-					capabilities.setCapability("newCommandTimeout", GlobalKeys.configData.get("newCommandTimeout"));
-				//	capabilities.setCapability("language", "en");
-					capabilities.setCapability("platformName", "Android");
-					capabilities.setCapability("deviceName", platformName);
-					capabilities.setCapability("name", "AutomationRun_"+ GlobalKeys.timeStamp);
-					//capabilities.setCapability("name", "AutomationRun_"+ GlobalKeys.timeStamp);
-		
-					capabilities.setCapability("app", "storage:filename=" + AndroidFileName); 
-	//				capabilities.setCapability("app", "storage:CFBundleVersion=391" + IPAFileName);
-		
-					driver = new AndroidDriver(
-							new URL("https://" + username + ":" +
-									accesskey +
-									"@"+Sauceurl+"/wd/hub"),
-							capabilities);
+					
+					//other cloud execution config here
 				}
 				
 				
@@ -113,15 +81,9 @@ public class TreatApplicationpage extends Common{
 
 	public void tearDown(String name){
 		try {
-//			File traceZip = new File(GlobalKeys.outputDirectory + "/perf"+name+".trace.zip");
-//			HashMap<String, Object> args = new HashMap<>();
-//			args.put("profileName", "Time Profiler");
-//			String b64Zip = driver.execute("mobile: stopPerfRecord", args);
-//			byte[] bytesZip = Base64.getMimeDecoder().decode(b64Zip);
-//			FileOutputStream stream = new FileOutputStream(traceZip);
-//			stream.write(bytesZip);
+
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		
 		}

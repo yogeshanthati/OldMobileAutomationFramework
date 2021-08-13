@@ -23,15 +23,15 @@ public class TreatHomePage extends AppPage {
 	private Page page;
 		
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/login_button")
-	@iOSXCUITFindBy(accessibility = "Sign In")
+	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Sign In']")
 	private MobileElement btnSignInSplashScreen;
 	
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/edit_email")
-	@iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=Email Address']")
+	@iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Email Address']//preceding-sibling:: XCUIElementTypeTextField") 
 	private MobileElement txtEmailAddress;
 
-	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/edit_password")
-	@iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Password']")
+	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/edit_password")  
+	@iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Password']//following-sibling:: XCUIElementTypeSecureTextField")
 	private MobileElement txtPassword;
 
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/btn_login")
@@ -39,14 +39,16 @@ public class TreatHomePage extends AppPage {
 	private MobileElement btnSignIn;
 
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/myAccountFragment")
-	@iOSXCUITFindBy(xpath = "*****")
+	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='accountInactive']")
 	private MobileElement btnMyAccount;
 	
 	@AndroidFindBy(id="com.xpresspa.treatmobile.qa:id/tv_sign_out")
-	@iOSXCUITFindBy(xpath = "*****")
+	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='SIGN OUT']")
 	private MobileElement btnSignOut;
-
-
+	
+	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Not Now']")
+	private MobileElement btnNotNow ;
+	
 
 	public void SignInToApp() {
 
@@ -55,11 +57,18 @@ public class TreatHomePage extends AppPage {
 			clickOn(btnSignInSplashScreen, "Sign In Button");
 			takeScreenshot(driver);
 			enterText(txtEmailAddress, "EmailAddress",  data.get("UserName"));
-			//hidekeyboard();
+			
 			enterText(txtPassword, "Password",  data.get("Password"));
-			//hidekeyboard();
+			
 			takeScreenshot(driver);
 			clickOn(btnSignIn, "Sign In Button");
+			
+			waitForElement(btnNotNow);
+			
+			if(isElementPresent(btnNotNow)) {
+				
+				clickOn(btnNotNow, "My Account button");
+			}
 			
 			waitForElement(btnMyAccount);
 			
