@@ -2,15 +2,15 @@
   <listners>
     <listner class-name="Utilities.TestListener"/>
   </listners>
-  <test name="IphoneXS">
-    <parameter name="selenium.deviceName" value="IphoneXS"/>
-    <parameter name="selenium.PlatformName" value="iPhone"/>
-    <parameter name="selenium.PlatformVersion" value="XS"/>
+  <test name="RedmiK20Pro">
+    <parameter name="selenium.deviceName" value="RedmiK20Pro"/>
+    <parameter name="selenium.PlatformName" value="Android"/>
+    <parameter name="selenium.PlatformVersion" value="11"/>
     <classes>
       <class name="testcases.TestCases">
         <methods>
-          <exclude name="MOB_TC12180_verify_Brokerage_AccountDetails"/>
           <include name="MOB_TC001_LogIntoTreatApp"/>
+          <include name="MOB_TC002_LogIntoTreatApp"/>
           <exclude name=""/>
           <exclude name=""/>
           <exclude name=""/>
