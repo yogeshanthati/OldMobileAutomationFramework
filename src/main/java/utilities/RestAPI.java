@@ -154,7 +154,6 @@ public class RestAPI extends Common {
 		Response response = null;   
 		String str = null;
 		try{
-
 			response = httpRequest.delete(deleteUrl);	            
 			info("DELETE request url : "+ baseUrl + deleteUrl  );
 			logJson(response.getBody().asString());

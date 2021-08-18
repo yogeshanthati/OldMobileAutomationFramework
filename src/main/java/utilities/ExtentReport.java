@@ -28,8 +28,8 @@ public class ExtentReport  {
 					    .statusFilter()
 					    .as(new Status[] { Status.FAIL })
 					  .apply();
-			spark.config().setReportName("Thrvent Mobile Automation");
-			spark.config().setDocumentTitle("Thrivent Automation Report");				
+			spark.config().setReportName("Treat Mobile Automation");
+			spark.config().setDocumentTitle("Treat Automation Report");				
 			extent.attachReporter(spark,sparkFail);			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -79,12 +79,12 @@ public class ExtentReport  {
 	
 	
 	public void logJson(String json){
-		//getTest().info(MarkupHelper.createCodeBlock(json, CodeLanguage.JSON));
+		
 		getTest().info(MarkupHelper.createCodeBlock(json, CodeLanguage.JSON));
 	}
 	
 	public void logPerf(String json){
-		//getTest().info(MarkupHelper.createCodeBlock(json, CodeLanguage.JSON));
+		
 		getTest().warning(MarkupHelper.createCodeBlock(json, CodeLanguage.JSON));
 	}
 	

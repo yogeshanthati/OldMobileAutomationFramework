@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.imageio.ImageIO;
@@ -19,16 +20,24 @@ import org.jsoup.Jsoup;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import pages.TreatHomePage;
 
 import org.jsoup.nodes.Document;
 
 public class Common extends ExtentReport{
 
+	protected AppiumDriver<WebElement> driver;	
+	
 	public void screenShot(String filename){
 		String scrPath = GlobalKeys.outputDirectory + "/Screenshots";
 		File file = new File(scrPath);
@@ -43,6 +52,9 @@ public class Common extends ExtentReport{
 			e.printStackTrace();
 		}
 	}
+
+
+	
 
 
 	
@@ -90,8 +102,8 @@ public class Common extends ExtentReport{
 		log("fail", errMessage);
 	}
 	
-	public void failAssert(String errMessage){
-		//log("fail", errMessage);
+	public static void failAssert(String errMessage){
+		
 		Assert.assertFalse(true, errMessage);
 	}
 

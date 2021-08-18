@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="42534" started-at="2021-08-13T16:50:16 IST" finished-at="2021-08-13T16:50:59 IST">
+  <suite name="Default suite" duration-ms="97516" started-at="2021-08-18T18:25:15 IST" finished-at="2021-08-18T18:26:52 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="42534" started-at="2021-08-13T16:50:16 IST" finished-at="2021-08-13T16:50:59 IST">
+    <test name="Default test" duration-ms="97516" started-at="2021-08-18T18:25:15 IST" finished-at="2021-08-18T18:26:52 IST">
       <class name="launchscript.LaunchScript">
-        <test-method status="PASS" signature="LaunchScript()[pri:0, instance:launchscript.LaunchScript@2698dc7]" name="LaunchScript" duration-ms="42511" started-at="2021-08-13T16:50:17 IST" finished-at="2021-08-13T16:50:59 IST">
+        <test-method status="PASS" signature="LaunchScript()[pri:0, instance:launchscript.LaunchScript@2698dc7]" name="LaunchScript" duration-ms="97493" started-at="2021-08-18T18:25:15 IST" finished-at="2021-08-18T18:26:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchScript -->
