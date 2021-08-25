@@ -104,7 +104,7 @@ public abstract class TestBase extends Common{
 					dc.setCapability("platformName", "Android");
 					dc.setCapability("platformVersion", "11");
 					dc.setCapability("noReset", "true");
-					dc.setCapability("appPackage", "com.xpresspa.treatmobile.qa");
+					dc.setCapability("appPackage", "com.xpresspa.treatmobile");
 					dc.setCapability("appActivity", "com.xpresspa.treatmobile.ui.activities.splash.SplashActivity");
 					dc.setCapability("skipDeviceInitialization", true);
 					dc.setCapability("skipServerInstallation", true);

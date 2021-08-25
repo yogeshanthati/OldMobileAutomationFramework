@@ -10,6 +10,7 @@
         <methods>
           <include name="MOB_TC001_LogIntoTreatApp" invocation-numbers="0"/>
           <include name="testStart"/>
+          <include name="MOB_TC002_LogIntoTreatApp" invocation-numbers="0"/>
         </methods>
       </class> <!-- testcases.TestCases -->
     </classes>
