@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="64551" started-at="2021-08-25T13:06:58 IST" finished-at="2021-08-25T13:08:03 IST">
+  <suite started-at="2021-08-25T14:08:42 IST" name="Default suite" finished-at="2021-08-25T14:10:04 IST" duration-ms="81880">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="64551" started-at="2021-08-25T13:06:58 IST" finished-at="2021-08-25T13:08:03 IST">
+    <test started-at="2021-08-25T14:08:42 IST" name="Default test" finished-at="2021-08-25T14:10:04 IST" duration-ms="81880">
       <class name="launchscript.LaunchScript">
-        <test-method status="PASS" signature="LaunchScript()[pri:0, instance:launchscript.LaunchScript@2698dc7]" name="LaunchScript" duration-ms="64504" started-at="2021-08-25T13:06:58 IST" finished-at="2021-08-25T13:08:03 IST">
+        <test-method signature="LaunchScript()[pri:0, instance:launchscript.LaunchScript@1afd44cb]" started-at="2021-08-25T14:08:42 IST" name="LaunchScript" finished-at="2021-08-25T14:10:04 IST" duration-ms="81839" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchScript -->

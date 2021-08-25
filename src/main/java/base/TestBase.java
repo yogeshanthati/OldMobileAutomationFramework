@@ -90,11 +90,16 @@ public abstract class TestBase extends Common{
 				dc.setCapability("udid", "auto");
 				dc.setCapability("platformName", "iOS");
 				dc.setCapability("platformVersion", "14.4.2");
-				dc.setCapability("bundleId", "com.mutualmobile.treat.dev");
+				dc.setCapability("bundleId", "com.xpresspa.treat.dev");
 				dc.setCapability("xcodeOrgId", "LJ44QB69J7");
 				dc.setCapability("xcodeSigningId", "iPhone Developer");
 				dc.setCapability("automationName", "XCUITest");
+				dc.setCapability("skipDeviceInitialization", true);
+				dc.setCapability("skipServerInstallation", true);
 				driver = new IOSDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), dc);
+				
+				
+
 
 			} else {
 				if (paltformName.trim().equalsIgnoreCase("Android")) {
@@ -120,7 +125,7 @@ public abstract class TestBase extends Common{
 			
 			
 		} catch (Exception e) {
-			failAssert("Unable to launch application in Sauce Labs, Exception is : " + e.getMessage());
+			failAssert("Unable to launch application , Exception is : " + e.getMessage());
 		}
 	 
 		return new TreatHomePage(driver,data);
