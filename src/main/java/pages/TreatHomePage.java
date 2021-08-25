@@ -27,23 +27,23 @@ public class TreatHomePage extends TestBase {
 
 	private TestBase page;
 
-	@AndroidFindBy(id = "com.xpresspa.treatmobile.qa:id/login_button")
+	@AndroidFindBy(id = "com.xpresspa.treatmobile:id/login_button") 
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Sign In']")
 	private MobileElement btnSignInSplashScreen;
 
-	@AndroidFindBy(id = "com.xpresspa.treatmobile.qa:id/edit_email")
+	@AndroidFindBy(id = "com.xpresspa.treatmobile:id/edit_email")
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Email Address']//preceding-sibling:: XCUIElementTypeTextField")
 	private MobileElement txtEmailAddress;
 
-	@AndroidFindBy(id = "com.xpresspa.treatmobile.qa:id/edit_password")
+	@AndroidFindBy(id = "com.xpresspa.treatmobile:id/edit_password")
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Password']//following-sibling:: XCUIElementTypeSecureTextField")
 	private MobileElement txtPassword;
 
-	@AndroidFindBy(id = "com.xpresspa.treatmobile.qa:id/btn_login")
+	@AndroidFindBy(id = "com.xpresspa.treatmobile:id/btn_login")
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Sign In']")
 	private MobileElement btnSignIn;
 
-	@AndroidFindBy(id = "com.xpresspa.treatmobile.qa:id/myAccount")
+	@AndroidFindBy(id = "com.xpresspa.treatmobile:id/myAccount")
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='accountInactive']")
 	private MobileElement btnMyAccount;
 
@@ -51,7 +51,7 @@ public class TreatHomePage extends TestBase {
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='accountInactive']")
 	private MobileElement txtDiscover;
 
-	@AndroidFindBy(id = "com.xpresspa.treatmobile.qa:id/tv_sign_out")
+	@AndroidFindBy(id = "com.xpresspa.treatmobile:id/tv_sign_out")
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='SIGN OUT']")
 	private MobileElement btnSignOut;
 
@@ -81,12 +81,6 @@ public class TreatHomePage extends TestBase {
 			waitForElement(txtDiscover);
 
 			if (isElementPresent(txtDiscover)) {
-
-				List<WebElement> els1 = driver.findElementsById("com.xpresspa.treatmobile.qa:id/image_view_content");
-
-				Point p1 = els1.get(0).getLocation();
-
-				Point p2 = els1.get(1).getLocation();
 
 				passed("Successfully Navigated To Discover Page");
 				takeScreenshot(driver);

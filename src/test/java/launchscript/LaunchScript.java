@@ -11,7 +11,6 @@ import utilities.Util;
 public class LaunchScript extends Util {
 
 
-	
 @Test
 public void LaunchScript() {
 		try {			
